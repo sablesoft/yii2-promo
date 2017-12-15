@@ -1,5 +1,5 @@
 {
-  "name": "teswork/yii2-promo",
+  "name": "sablerom/yii2-promo",
   "description": "Package",
   "type": "yii2-extension",
   "keywords": [
@@ -10,9 +10,9 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Roman Sobol",
-      "email": "sable.lair@gmail.com",
-      "role": "Developer"
+      "name":   "Roman Sobol",
+      "email":  "sable.lair@gmail.com",
+      "role":   "Developer"
     }
   ],
   "minimum-stability": "stable",
@@ -24,11 +24,11 @@
     "yiisoft/yii2-apidoc": "~2.1.0"
   },
   "extra": {
-    "bootstrap": "testwork\\promo\\Module"
+    "bootstrap": "testwork\\promo\\Bootstrap"
   },
   "autoload": {
     "psr-4": {
-      "testwork\\promo\\": "\\"
+      "testwork\\promo\\": ""
     }
   }
 }

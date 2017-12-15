@@ -2,15 +2,12 @@
 
 namespace testwork\promo;
 
-use yii\base\Event;
-use yii\base\Application;
-use yii\base\BootstrapInterface;
 use yii\helpers\ArrayHelper;
 
 /**
  * promo module definition class
  */
-class Module extends \yii\base\Module implements BootstrapInterface {
+class Module extends \yii\base\Module {
 
     const PROD_MODE = 'production';
     const DEV_MODE  = 'develop';
@@ -58,20 +55,8 @@ class Module extends \yii\base\Module implements BootstrapInterface {
     }
 
     /**
-     * @param Application $app
-     */
-    public function bootstrap( $app ) {
-        // check request for promo module:
-        $app->on(Application::EVENT_BEFORE_REQUEST, function( Event $event ) {
-            /** @var Application $app */
-            $app = $event->sender;
-            $route = $app->getRequest()->getPathInfo();
-            if( preg_match('#^promo*#', $route, $matches ) )
-                $this->initPromoUser( $app );
-        });
-    }
-
-    /**
+     * Production mode checker
+     *
      * @return bool
      */
     public function isProduction() {
@@ -79,7 +64,9 @@ class Module extends \yii\base\Module implements BootstrapInterface {
     }
 
     /**
+     * Set module aliases
      *
+     * @return void
      */
     protected function aliasesInit() {
         // retrieve aliases paths:
@@ -91,6 +78,9 @@ class Module extends \yii\base\Module implements BootstrapInterface {
     }
 
     /**
+     * Update main app components
+     *
+     * @return void
      *
      */
     protected function updateAppComponents() {
@@ -98,16 +88,6 @@ class Module extends \yii\base\Module implements BootstrapInterface {
         $appComponents = \Yii::$app->getComponents();
         $appComponents = ArrayHelper::merge( $appComponents, $components );
         \Yii::$app->setComponents( $appComponents );
-    }
-
-    /**
-     * @param Application $app
-     */
-    protected function initPromoUser( Application $app ) {
-        $components = $app->getComponents();
-        $userConfig = $components['user'];
-        $userConfig = array_merge( $userConfig, require( __DIR__ . '/config/user.php' ) );
-        $app->set('user', $userConfig );
     }
 
 }
