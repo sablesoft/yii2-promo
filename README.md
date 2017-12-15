@@ -24,7 +24,7 @@ Migration
 After the extension has been installed, start the migration:
 
 ```
-$ ./yii migrate --migratePath=vendor/sablerom/yii2-promo/migrations
+$ ./yii migrate --migrationPath=vendor/sablerom/yii2-promo/migrations
 ```
 
 After that you can test the module through the browser and through the api requests.
