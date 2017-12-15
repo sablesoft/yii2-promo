@@ -26,6 +26,14 @@
   "extra": {
     "bootstrap": "testwork\\promo\\Bootstrap"
   },
+  "scripts": {
+    "post-update-cmd": [
+      "php yii migrate --interactive=0 --migrationPath=@testwork/promo/migrations"
+    ],
+    "post-install-cmd": [
+      "php yii migrate --interactive=0 --migrationPath=@testwork/promo/migrations"
+    ]
+  },
   "autoload": {
     "psr-4": {
       "testwork\\promo\\": ""
