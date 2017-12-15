@@ -24,24 +24,24 @@ return [
         'showScriptName' => false,
         'rules' => [
             [
-                'name'      => 'promoApiRule',
-                'class'     => 'yii\web\UrlRule',
-                'pattern'   => Bootstrap::MODULE_ID . '/api',
-                'route'     => Bootstrap::MODULE_ID . '/api'
-            ],
-            [
-                'name'      => 'promoCrudRule',
-                'class'     => 'yii\web\UrlRule',
-                'pattern'   => Bootstrap::MODULE_ID . '/<action:[\w\-]+>',
-                'route'     => Bootstrap::MODULE_ID . '/crud/<action>'
-            ],
-            [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => 'promo/api',
                 'tokens' => [
                     '{id}'      => '<id:[a-zA-Z0-9\\-]+>'
                 ],
                 'pluralize' => false
+            ],
+            [
+                'name'      => 'promoApiRule',
+                'class'     => 'yii\web\UrlRule',
+                'pattern'   => Bootstrap::MODULE_ID,
+                'route'     => Bootstrap::MODULE_ID . '/crud'
+            ],
+            [
+                'name'      => 'promoCrudRule',
+                'class'     => 'yii\web\UrlRule',
+                'pattern'   => Bootstrap::MODULE_ID . '/<action:[\w\-]+>',
+                'route'     => Bootstrap::MODULE_ID . '/crud/<action>'
             ]
         ]
     ],

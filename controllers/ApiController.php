@@ -29,14 +29,17 @@ class ApiController extends ActiveController {
     }
 
     /**
+     * Append custom findModel to rest actions
+     *
      * @return array
      */
     public function actions() {
-        return array_map( function( $action ) {
-            return array_merge( $action,
-                ['findModel' => [ $this, 'findModel' ] ]
-            );
-        }, parent::actions() );
+        $actions = parent::actions();
+        foreach( $actions as $name => $action ) {
+            if( $name !== 'options' )
+                $actions[ $name ]['findModel'] = [ $this, 'findModel' ];
+        }
+        return $actions;
     }
 
     /**
