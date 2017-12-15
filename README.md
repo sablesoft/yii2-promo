@@ -4,6 +4,7 @@ a promo module with crud and rest api controllers will append to web app.
 Installation
 ------------
 
+WARNING! You need a pre-installed yii2 application with a connected database. 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Just add
@@ -68,3 +69,14 @@ $ curl -i -H "Content-Type:application/json" -H "Authorization: Bearer adminToke
 ```
 
 For more information about api actions check the [Yii2 RESTful Web Services Guide](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)
+
+Code Docs
+-----
+
+To generate the documentation, use the command
+
+```
+vendor/bin/apidoc api source/directory ./output
+```
+
+For more info check the Yii2 original [documentation](http://www.yiiframework.com/doc-2.0/ext-apidoc-index.html).
