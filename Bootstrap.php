@@ -11,6 +11,7 @@ namespace testwork\promo;
 use yii\base\Event;
 use yii\web\Application;
 use yii\base\BaseObject;
+use yii\helpers\ArrayHelper;
 use yii\base\BootstrapInterface;
 
 /**
@@ -19,28 +20,38 @@ use yii\base\BootstrapInterface;
  */
 class Bootstrap extends BaseObject implements BootstrapInterface {
 
+    const MODULE_ID = 'promo';
+
     /**
      * @param Application $app
      */
     public function bootstrap( $app ) {
+        // append promo module to app:
+        $app->setModule(self::MODULE_ID, ['class' => 'testwork\promo\Module' ]);
         // check request for promo module:
         $app->on(Application::EVENT_BEFORE_REQUEST, function( Event $event ) {
             /** @var Application $app */
             $app = $event->sender;
             $route = $app->getRequest()->getPathInfo();
             if( preg_match('#^promo*#', $route, $matches ) )
-                $this->initPromoUser( $app );
+                $this->updateAppComponents( $app );
         });
     }
 
     /**
-     * @param Application $app
+     * Update main app components
+     *
+     * @return void
+     *
      */
-    protected function initPromoUser( Application $app ) {
-        $components = $app->getComponents();
-        $userConfig = $components['user'];
-        $userConfig = array_merge( $userConfig, require( __DIR__ . '/config/user.php' ) );
-        $app->set('user', $userConfig );
+    protected function updateAppComponents( Application $app ) {
+        // load components for promo module working:
+        $components = require(__DIR__ . '/config/components.php');
+        // load current app components:
+        $appComponents = $app->getComponents();
+        // merging and set:
+        $appComponents = ArrayHelper::merge( $appComponents, $components );
+        $app->setComponents( $appComponents );
     }
 
 }
