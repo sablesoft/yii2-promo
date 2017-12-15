@@ -27,10 +27,7 @@
     "bootstrap": "testwork\\promo\\Bootstrap"
   },
   "scripts": {
-    "post-update-cmd": [
-      "php yii migrate --interactive=0 --migrationPath=@testwork/promo/migrations"
-    ],
-    "post-install-cmd": [
+    "post-package-install": [
       "php yii migrate --interactive=0 --migrationPath=@testwork/promo/migrations"
     ]
   },
