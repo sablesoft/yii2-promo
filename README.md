@@ -24,7 +24,7 @@ Migration
 After the extension has been installed, start the migration:
 
 ```
-$ ./yii migrate
+$ ./yii migrate --migratePath=vendor/sablerom/yii2-promo/migrations
 ```
 
 After that you can test the module through the browser and through the api requests.
@@ -76,7 +76,7 @@ Code Docs
 To generate the documentation, use the command
 
 ```
-vendor/bin/apidoc api source/directory ./output
+vendor/bin/apidoc api vendor/sablerom/yii2-promo ./docs/api
 ```
 
 For more info check the Yii2 original [documentation](http://www.yiiframework.com/doc-2.0/ext-apidoc-index.html).
