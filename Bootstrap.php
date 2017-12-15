@@ -28,14 +28,15 @@ class Bootstrap extends BaseObject implements BootstrapInterface {
     public function bootstrap( $app ) {
         // append promo module to app:
         $app->setModule(self::MODULE_ID, ['class' => 'testwork\promo\Module' ]);
-        // check request for promo module:
-        $app->on(Application::EVENT_BEFORE_REQUEST, function( Event $event ) {
-            /** @var Application $app */
-            $app = $event->sender;
-            $route = $app->getRequest()->getPathInfo();
-            if( preg_match('#^promo*#', $route, $matches ) )
-                $this->updateAppComponents( $app );
-        });
+        // check web request for promo module:
+        if( $app instanceof Application )
+            $app->on(Application::EVENT_BEFORE_REQUEST, function( Event $event ) {
+                /** @var Application $app */
+                $app = $event->sender;
+                $route = $app->getRequest()->getPathInfo();
+                if( preg_match('#^promo*#', $route, $matches ) )
+                    $this->updateAppComponents( $app );
+            });
     }
 
     /**
