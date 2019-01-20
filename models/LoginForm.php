@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\models;
 
 use Yii;

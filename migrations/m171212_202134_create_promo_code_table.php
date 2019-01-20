@@ -1,5 +1,4 @@
 <?php
-
 use yii\db\Migration;
 
 /**
@@ -37,5 +36,4 @@ class m171212_202134_create_promo_code_table extends Migration {
         $this->dropForeignKey('promo_code_zone', 'promo_code');
         $this->dropTable('promo_code');
     }
-
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\models;
 
 use Yii;
@@ -160,5 +159,4 @@ class PromoCode extends \yii\db\ActiveRecord {
     public static function find() {
         return new PromoCodeQuery( get_called_class() );
     }
-
 }

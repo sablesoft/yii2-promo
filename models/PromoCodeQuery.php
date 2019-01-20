@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\models;
 
 use yii\db\Connection;
@@ -43,5 +42,4 @@ class PromoCodeQuery extends \yii\db\ActiveQuery {
     public function one( $db = null ) {
         return parent::one( $db );
     }
-
 }

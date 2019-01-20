@@ -1,8 +1,9 @@
 {
-  "name": "sablerom/yii2-promo",
+  "name": "sablesoft/yii2-promo",
   "description": "Package",
   "type": "yii2-extension",
   "keywords": [
+    "sablesoft",
     "yii2",
     "testwork",
     "promo"
@@ -10,7 +11,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name":   "Roman Sobol",
+      "name":   "SableSoft (Raman Sobal)",
       "email":  "sable.lair@gmail.com",
       "role":   "Developer"
     }

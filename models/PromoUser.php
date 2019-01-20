@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\models;
 
 use Yii;
@@ -168,5 +167,4 @@ class PromoUser extends \yii\db\ActiveRecord implements IdentityInterface {
     protected static function findActiveBy( $condition ) {
         return static::find()->where( $condition )->active()->one();
     }
-
 }

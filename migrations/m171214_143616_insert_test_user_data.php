@@ -1,5 +1,4 @@
 <?php
-
 use yii\db\Migration;
 use testwork\promo\models\PromoUser;
 
@@ -45,5 +44,4 @@ class m171214_143616_insert_test_user_data extends Migration {
             ]
         ];
     }
-
 }

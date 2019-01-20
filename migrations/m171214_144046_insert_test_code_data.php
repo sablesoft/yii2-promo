@@ -1,5 +1,4 @@
 <?php
-
 use yii\db\Migration;
 use testwork\promo\models\PromoCode;
 
@@ -62,7 +61,5 @@ class m171214_144046_insert_test_code_data extends Migration {
                 'active_until'  => '2017-12-28'
             ]
         ];
-
     }
-
 }

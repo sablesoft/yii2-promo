@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roan
- * Date: 15.12.17
- * Time: 4.04
- */
-
 namespace testwork\promo;
 
 use yii\base\Event;
@@ -57,5 +50,4 @@ class Bootstrap extends BaseObject implements BootstrapInterface {
         $appComponents = ArrayHelper::merge( $appComponents, $components );
         $app->setComponents( $appComponents );
     }
-
 }

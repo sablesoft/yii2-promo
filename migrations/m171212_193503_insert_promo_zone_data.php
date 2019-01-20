@@ -1,5 +1,4 @@
 <?php
-
 use yii\db\Migration;
 use testwork\promo\models\PromoZone;
 
@@ -32,5 +31,4 @@ class m171212_193503_insert_promo_zone_data extends Migration {
             'Kiev'
         ];
     }
-
 }

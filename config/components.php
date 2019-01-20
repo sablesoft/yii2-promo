@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roan
- * Date: 12.12.17
- * Time: 18.45
- */
-
 use testwork\promo\Bootstrap;
 use testwork\promo\models\PromoUser;
 

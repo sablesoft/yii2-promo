@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\controllers;
 
 use yii\rest\Action;
@@ -63,5 +62,4 @@ class ApiController extends ActiveController {
 
         throw new NotFoundHttpException("Object not found: $id");
     }
-
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\controllers;
 
 use Yii;
@@ -155,5 +154,4 @@ class CrudController extends Controller {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
 }

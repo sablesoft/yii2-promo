@@ -1,5 +1,4 @@
 <?php
-
 namespace testwork\promo\models;
 
 use yii\db\Query;
@@ -116,5 +115,4 @@ class PromoCodeSearch extends PromoCode {
         return ( !empty( $date ) )?
             date("Y-m-d H:i:s", strtotime( $date ) ): null;
     }
-
 }

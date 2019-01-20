@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Just add
 
 ```
-"sablerom/yii2-promo": "*"
+"sablesoft/yii2-promo": "*"
 ```
 to the require section of your `composer.json` file and run
 
@@ -24,7 +24,7 @@ Migration
 After the extension has been installed, start the migration:
 
 ```
-$ ./yii migrate --migrationPath=vendor/sablerom/yii2-promo/migrations
+$ ./yii migrate --migrationPath=vendor/sablesoft/yii2-promo/migrations
 ```
 
 After that you can test the module through the browser and through the api requests.
@@ -76,7 +76,7 @@ Code Docs
 To generate the documentation, use the command
 
 ```
-vendor/bin/apidoc api vendor/sablerom/yii2-promo ./docs/api
+vendor/bin/apidoc api vendor/sablesoft/yii2-promo ./docs/api
 ```
 
 For more info check the Yii2 original [documentation](http://www.yiiframework.com/doc-2.0/ext-apidoc-index.html).
